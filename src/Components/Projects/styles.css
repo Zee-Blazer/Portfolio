@@ -1,0 +1,25 @@
+.project__section
+{
+    margin: 42px;
+    text-align: center;
+}
+
+.project__section h3
+{
+    display: inline-block;
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: 18px;
+    padding-bottom: 7px;
+}
+
+.project__section h3::after
+{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%; /* Adjust the width of the half border */
+    height: 2px; /* Adjust the thickness of the half border */
+    background: #38CF4D;
+}

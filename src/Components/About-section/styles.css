@@ -58,6 +58,9 @@
     margin: 4px 35%;
     margin-top: 21px;
     border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
 }
 
 .div__align
