@@ -1,0 +1,101 @@
+.intro__section
+{
+    display: flex;
+}
+
+.intro__section div
+{
+    flex: 1;
+    margin-top: 200px;
+    margin-left: -100px;
+}
+
+.intro__section h2
+{
+    margin-bottom: 6px;
+}
+
+.intro__section div h4
+{
+    margin-left: 32px;
+}
+
+.shape-1__img
+{
+    margin-top: 42px;
+    width: 321px;
+    height: 389px;
+}
+
+.main__img
+{
+    margin-top: 42px;
+    width: 496px;
+    height: 442;
+}
+
+.span__green
+{
+    color: #38CF4D;
+}
+
+.span__blue
+{
+    color: #1888E2;
+}
+
+.skill__header
+{
+    color: #A2A2A2;
+}
+
+.span__org 
+{
+    color: #FDB60E;
+}
+
+@media only screen and (max-width: 600px) {
+    .main__img
+    {
+        width: 220px;
+        height: 170px;
+    }
+
+    .intro__section div
+    {
+        margin-top: 78px;
+        background-color: transparent;
+    }
+
+    .intro__section div h2
+    {
+        font-size: 14px;
+    }
+
+    .intro__section div h1
+    {
+        font-size: 18px;
+    }
+
+    .intro__section div h4
+    {
+        font-size: 10px;
+    }
+
+    .shape-1__img
+    {
+        width: 128px;
+        height: 149px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .main__img
+    {
+        margin-top: 104px;
+    }
+    .shape-1__img
+    {
+        margin-top: 98px;
+    }
+}
