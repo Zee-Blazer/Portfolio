@@ -30,16 +30,6 @@
     font-size: 36px;
 }
 
-.image__display
-{
-    min-width: 420px;
-    height: 280px;
-    margin: 2px 12px;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: .9s;
-}
-
 .display__bg
 {
     display: none;
@@ -129,6 +119,20 @@
     border-radius: 8px;
 }
 
+@media only screen and (min-width: 600px){
+
+.image__display
+{
+    min-width: 440px;
+    max-width: 440px;
+    height: 280px;
+    margin: 2px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: .9s;
+}
+}
+
 @media only screen and (max-width: 600px)
 {
     .project__section
@@ -138,8 +142,13 @@
 
     .image__display
     {
-        max-height: 210px;
-        max-width: 80px;
+        min-width: 320px;
+        max-width: 320px;
+        height: 180px;
+        margin: 2px 12px;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: .9s;
     }
 
     .spec__display__cont

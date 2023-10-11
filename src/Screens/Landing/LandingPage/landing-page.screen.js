@@ -7,6 +7,7 @@ import { SkillsSection } from "../../../Components/Skills-section";
 import { ProjectSection } from "../../../Components/Projects";
 import { BlogSection } from "../../../Components/Blog";
 import { ContactSection } from "../../../Components/Contact-Section";
+import { FooterComponent } from "../../../Components/Header/footer";
 
 export const LandingScreen = () => {
     document.title = "Ganiyu Bolaji Portfolio"
@@ -20,7 +21,7 @@ export const LandingScreen = () => {
             <ProjectSection />
             <BlogSection />
             <ContactSection />
-            Landing page screen
+            <FooterComponent />
         </div>
     )
 }

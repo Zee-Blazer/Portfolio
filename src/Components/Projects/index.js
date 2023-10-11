@@ -1,14 +1,14 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 // Styling
 import './styles.css';
 
-// Image
-import Product from '../../Images/pro-duct.png';
-
 // For the image slider
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+
+// Component
+import { SampleProjectComponent } from './sample-project.component';
 
 export const  ProjectSection = () => {
 
@@ -53,32 +53,7 @@ export const  ProjectSection = () => {
 
                 <div className="images-container" ref={sliderRef}>
                     {images.map((image, index) => (
-                        <div 
-                            className='image__display'
-                            key={index}
-                            style={{ backgroundImage: `url(${Product})` }}
-                        >
-
-                            <div className='display__bg'>
-                                <h2>Project Name</h2>
-
-                                <div className='tools__display'>
-                                    { image.tool.map( item => (
-                                        <p>{ item }</p>
-                                    ) ) }
-                                </div>
-
-                                <p className='spec__display__cont'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque. Tempus quam pellentesque nec nam aliquam sem. Hendrerit dolor magna eget est lorem ipsum dolor. Sit amet massa vitae tortor condimentum lacinia. At ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Dui sapien eget mi proin sed libero enim sed faucibus.</p>
-                                
-                                <div className='inside__btn'>
-                                    <button>Visit</button>
-                                    <button>Code</button>
-                                    <button>Video/Picture</button>
-                                </div>
-
-                            </div>
-
-                        </div>
+                        <SampleProjectComponent image={ image } index={ index } />
                     ) )}
                 </div>
 

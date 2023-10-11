@@ -87,6 +87,15 @@
     color: #B5B5B5;
 }
 
+.footer
+{
+    text-align: center;
+    margin: 24px 16px;
+    padding: 21px 8px;
+    border-top: 2px solid #FDB60E;
+    color: #A2A2A2;
+}
+
 @media only screen and (max-width: 600px) {
     .mobile__nav__view{
         display: flex;
