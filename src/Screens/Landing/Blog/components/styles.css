@@ -4,4 +4,151 @@
     color: #B5B5B5;
     font-family: "Sofia", sans-serif;
     margin: 24px 38px;
+    margin-left: 86px;
+}
+
+.blog__detail__cont
+{
+    margin: 12px 24px;
+    display: flex;
+}
+
+.about__person
+{
+    flex: .4
+}
+
+.main__blog__detail
+{
+    flex: .7;
+}
+
+.blog__writings
+{
+    font-family: "Inter", sans-serif;
+    line-height: 21px;
+    font-size: 14px;
+}
+
+.intro__blog__img
+{
+    width: 768px;
+    height: 200px;
+    margin-bottom: 27px;
+}
+
+.blog__post__title
+{
+    margin: 32px 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 34px;
+    margin-bottom: 0px;
+}
+
+.blog__post__date
+{
+    color: #B5B5B5;
+    font-size: 12px;
+    margin-left: 18px;
+    margin-bottom: 32px;
+    margin-top: 7px;
+}
+
+.more__like__blog
+{
+    color: #B5B5B5;
+    margin-top: 54px;
+    margin-bottom: -32px;
+    margin-left: 28px;
+}
+
+.about__person
+{
+    background-color: #1E1E1E;
+    border-radius: 7px;
+    padding: 7px 12px;
+    max-height: 200px;
+    margin-left: 28px;
+    margin-top: 121px;
+}
+
+.about__person__header
+{
+    display: flex;
+    margin: 7px 8px;
+}
+
+.about__person__header div
+{
+    margin-left: 14px;
+}
+
+.about__person__header div h5
+{
+    font-size: 19px;
+    margin-top: 6px;
+    font-family: "Inter", sans-serif;
+}
+
+.about__person__header div p
+{
+    font-size: 12px;
+    margin-top: 2px;
+    color: #B5B5B5;
+    font-family: "Roboto", sans-serif;
+}
+
+.icons__media
+{
+    margin: 7px 6px;
+}
+
+.about__person__blogger
+{
+    color: #A2A2A2;
+    margin: 12px;
+    margin-top: 21px;
+    margin-bottom: 7px;
+}
+
+.about__person__descript
+{
+    font-size: 12px;
+    margin: 8px 12px;
+    line-height: 18px;
+}
+
+@media only screen and (max-width: 600px)
+{
+    .blog__title__head
+    {
+        margin-left: 24px;
+    }
+
+    .blog__detail__cont
+    {
+        display: block;
+    }
+
+    .more__like__blog
+    {
+        color: #B5B5B5;
+        margin-top: 54px;
+        margin-bottom: -12px;
+        margin-left: 18px;
+    }
+
+    .intro__blog__img
+    {
+        width: 364px;
+        height: 100px;
+    }
+
+    .about__person
+    {
+        max-height: 200px;
+        margin-left: 0px;
+        margin-top: 58px;
+    }
 }

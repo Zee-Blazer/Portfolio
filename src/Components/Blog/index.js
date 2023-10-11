@@ -3,7 +3,7 @@
 import './styles.css';
 
 // Components
-import { BlogContainerComponent } from './blog-container.component';
+import { BlogListComponent } from './blog-list.component';
 
 export const BlogSection = () => {
 
@@ -11,11 +11,7 @@ export const BlogSection = () => {
         <div className="blog__section">
             <h3>Blog</h3>
 
-            <div className='blog__list__cont'>
-                <BlogContainerComponent />
-                <BlogContainerComponent />
-                <BlogContainerComponent />
-            </div>
+            <BlogListComponent />
 
             <button className='main__btn'>Explore More</button>
         </div>

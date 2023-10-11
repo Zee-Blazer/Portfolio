@@ -5,6 +5,7 @@ import "./components/styles.css";
 // Component
 import { Header } from "../../../Components/Header";
 import { BlogDisplayer } from "./components/blog-displayer.component";
+import { FooterComponent } from '../../../Components/Header/footer';
 
 export const DisplayBlogScreen = () => {
 
@@ -14,7 +15,7 @@ export const DisplayBlogScreen = () => {
         <div>
             <Header />
             <BlogDisplayer />
-            Something good
+            <FooterComponent />
         </div>
     )
 }

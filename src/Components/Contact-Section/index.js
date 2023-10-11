@@ -2,11 +2,8 @@
 // Styles
 import './styles.css';
 
-// Material Icon
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import EmailIcon from '@mui/icons-material/Email';
-import GitHubIcon from '@mui/icons-material/GitHub';
+// Component
+import { MediaContactComponent } from './media-contact.component';
 
 export const ContactSection = () => {
 
@@ -25,12 +22,7 @@ export const ContactSection = () => {
 
                     <button className='send__msg'>Send Message</button>
                 </div>
-                <div>
-                    <LinkedInIcon />
-                    <GitHubIcon />
-                    <TwitterIcon />
-                    <EmailIcon />
-                </div>
+                <MediaContactComponent />
             </div>
         </div>
     )
