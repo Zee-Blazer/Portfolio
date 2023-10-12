@@ -1,0 +1,117 @@
+.fill__details__cont
+{
+    margin: 24px 28px;
+}
+
+.fill__details__h2
+{
+    color: #B5B5B5;
+    font-family: "Inter";
+    letter-spacing: 2px;
+}
+
+.form__data__cont
+{
+    margin: 36px 0px;
+}
+
+.form__data__cont input, .form__data__cont textarea
+{
+    border: 2px solid #FDB60E;
+    background-color: transparent;
+    margin-bottom: 18px;
+    padding: 8px 12px;
+    font-family: "Inter";
+    font-size: 18px;
+    border-radius: 8px;
+    outline: none;
+    color: #B5B5B5;
+    min-width: 540px;
+}
+
+.message__display__cont
+{
+    background-color: #1E1E1E;
+    padding: 12px 18px;
+    margin: 14px 18px;
+    border-radius: 8px;
+    color: #B5B5B5;
+    flex-grow: 200;
+    max-width: 498px;
+}
+
+.message__display__cont div
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.all__msg__cont
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message__display__cont p
+{
+    font-size: 14px;
+}
+
+.wrapperClassName
+{
+    min-height: 400px;
+    background-color: white;
+    color: black;
+    border-radius: 0px 0px 6px 6px;
+}
+
+.form__data__btn__cont
+{
+    margin-top: 24px;
+}
+
+.form__data__btn__cont button
+{
+    padding: 8px 18px;
+    outline: none;
+    border: none;
+    margin: 4px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    font-family: "Roboto";
+    font-size: 16px;
+}
+
+.draft__btn
+{
+    background-color: #FDB60E;
+}
+
+.save__btn
+{
+    background-color: #1888E2;
+}
+
+.form__data__cont textarea
+{
+    min-height: 200px;
+    min-width: 620px;
+    max-width: 624px;
+}
+
+@media only screen and (max-width: 600px)
+{
+    .form__data__cont input, .form__data__cont textarea
+    {
+        min-width: 320px;
+        max-width: 324px;
+    }
+
+    .wrapperClassName
+    {
+        min-height: 520px;
+    }
+}

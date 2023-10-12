@@ -96,6 +96,12 @@
     color: #A2A2A2;
 }
 
+.dashboard__h3
+{
+    margin-top: 2px;
+    margin-left: 6px;
+}
+
 @media only screen and (max-width: 600px) {
     .mobile__nav__view{
         display: flex;

@@ -1,0 +1,58 @@
+.add__new__project__header
+{
+    text-align: center;
+    margin: 28px 2px;
+    color: #A2A2A2;
+    font-family: "Roboto";
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.spacer__form__cont
+{
+    margin: 12px 24px;
+}
+
+.add__project
+{
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background-color: #1888E2;
+    color: white;
+    padding: 8px 17px;
+    margin: 1px 24px;
+    margin-bottom: 21px;
+    text-align: center;
+}
+
+.tech__stack__part
+{
+    margin: 18px 2px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tech__stack__part p
+{
+    background-color: #1E1E1E;
+    max-width: 200px;
+    padding: 6px 12px;
+    margin: 2px 6px;
+    flex-grow: 200;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+}
+
+.select__displayer__media
+{
+    width: 76px;
+    margin: 2px 6px;
+    margin-bottom: 21px;
+}
+
+.add__icon__mui
+{
+    margin-bottom: -7px;
+}

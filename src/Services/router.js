@@ -8,6 +8,9 @@ import { SpecificPostScreen } from '../Screens/Landing/Blog/specific-post.screen
 
 // Dashborad screen
 import { CreateBlogScreen } from '../Screens/Dashboard/Create-Blog/create-blog.screen';
+import { MessagesScreen } from '../Screens/Dashboard/Messages/messages.screen';
+import { AddProjectScreen } from '../Screens/Dashboard/Projects/add-project.screen';
+import { BlogsScreen } from '../Screens/Dashboard/Create-Blog/blogs.screen';
 
 export const router = createBrowserRouter([
     {
@@ -29,6 +32,18 @@ export const router = createBrowserRouter([
     {
         path: "/dashboard/create-blog",
         element: <CreateBlogScreen />
+    },
+    {
+        path: "/dashboard/all-messages",
+        element: <MessagesScreen />
+    },
+    {
+        path: "/dashboard/add-project",
+        element: <AddProjectScreen />
+    },
+    {
+        path: "/dashboard/blogs",
+        element: <BlogsScreen />
     }
 ]);
 

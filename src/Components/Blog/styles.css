@@ -89,6 +89,14 @@
     margin: 12px 2px;
 }
 
+.delete__blog__icon
+{
+    font-size: 10px;
+    color: red;
+    cursor: pointer;
+    margin-left: 14px;
+}
+
 @media only screen and (max-width: 600px)
 {
     .blog__list__cont

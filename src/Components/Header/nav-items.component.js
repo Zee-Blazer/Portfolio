@@ -9,7 +9,7 @@ import Drawer from '@mui/material/Drawer';
 // Components
 import { ItemsComponent } from './items.component';
 
-export const NavItems = () => {
+export const NavItems = ({ type }) => {
 
     const [open, setOpen] = useState(false);
 
@@ -20,6 +20,13 @@ export const NavItems = () => {
         {text: "Projects", link: "#projects"},
         {text: "Blog", link: "#blog"},
     ];
+
+    const dashItems = [
+        {text: "About", link: "#about"},
+        {text: "Projects", link: "#projects"},
+        {text: "Blog", link: "#blog"},
+        {text: "Messages", link: "#messages"},
+    ]
 
     const toggleDrawer = (value) => setOpen(value);
     
@@ -33,13 +40,19 @@ export const NavItems = () => {
                     onClose={ () => toggleDrawer(false) }
                 >
                     <div className='drawer__cont'>
-                        <ItemsComponent items={ items } />
+                        <ItemsComponent 
+                            items={ type === "Dashboard" ? dashItems : items } 
+                            type={ type } 
+                        />
                     </div>
                 </Drawer>
             </div>
             
             <div  className='desktop__nav__view'>
-                <ItemsComponent items={ items } />
+                <ItemsComponent 
+                    items={ type === "Dashboard" ? dashItems : items } 
+                    type={ type } 
+                />
             </div>
         </>
     )

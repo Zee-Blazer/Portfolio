@@ -1,5 +1,5 @@
 
-export const ItemsComponent = ({ items }) => {
+export const ItemsComponent = ({ items, type }) => {
 
     return (
         <ul className="items__shower">
@@ -7,7 +7,7 @@ export const ItemsComponent = ({ items }) => {
                 return (
                     <>
                         {
-                            item.text == "Blog" ? 
+                            item.text == "Blog" && type !== "Dashboard" ? 
                             <div className="blog__nav__style" key={ item.link }>
                                 <li>
                                     {/* <a href={item.link}>{ item.text }</a> */}
