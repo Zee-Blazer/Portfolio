@@ -11,6 +11,7 @@ import { CreateBlogScreen } from '../Screens/Dashboard/Create-Blog/create-blog.s
 import { MessagesScreen } from '../Screens/Dashboard/Messages/messages.screen';
 import { AddProjectScreen } from '../Screens/Dashboard/Projects/add-project.screen';
 import { BlogsScreen } from '../Screens/Dashboard/Create-Blog/blogs.screen';
+import { ProjectScreen } from '../Screens/Dashboard/Projects/project.screen';
 
 export const router = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
     {
         path: "/dashboard/blogs",
         element: <BlogsScreen />
+    },
+    {
+        path: "/dashboard/projects",
+        element: <ProjectScreen />
     }
 ]);
 

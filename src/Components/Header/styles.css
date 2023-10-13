@@ -5,6 +5,16 @@
     padding: 6px 2px;
     border-bottom: 2px solid #FDB60E;
     margin: 2px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.spacer
+{
+    margin-bottom: 84px;
 }
 
 .header__abri

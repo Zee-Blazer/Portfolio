@@ -1,8 +1,11 @@
 
+// Material UI Icon
+import BackspaceIcon from '@mui/icons-material/Backspace';
+
 // Image
 import Product from '../../Images/pro-duct.png';
 
-export const SampleProjectComponent = ({ image, index, display, handleOpen }) => {
+export const SampleProjectComponent = ({ image, index, display, handleOpen, type }) => {
 
     return (
         <div 
@@ -26,6 +29,7 @@ export const SampleProjectComponent = ({ image, index, display, handleOpen }) =>
                     <button>Visit</button>
                     <button>Code</button>
                     <button onClick={ () => display === "sample" && handleOpen() }>Video/Picture</button>
+                    { type === "Dashboard" && <BackspaceIcon className='backspace__icon' /> }
                 </div>
 
             </div>

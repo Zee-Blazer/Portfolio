@@ -6,7 +6,10 @@ export const BlogDisplayer = ({ type }) => {
 
     return (
         <div>
-            <h3 className="blog__title__head">Blog</h3>
+            <div className="display__adder">
+                <h3 className="blog__title__head">Blog</h3>
+                { type === "Dashboard" && <div className="adder__blog">Add</div> }
+            </div>
             <BlogListComponent type={ type } />
         </div>
     )

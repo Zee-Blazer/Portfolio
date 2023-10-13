@@ -63,6 +63,20 @@
     display: flex;
 }
 
+.backspace__icon
+{
+    margin-top: 16px;
+    color: rgb(255, 47, 0);
+}
+
+.style__span
+{
+    font-size: 12px;
+    margin-left: 12px;
+    cursor: pointer;
+    color: rgb(0, 115, 255);
+}
+
 .disk__cont div
 {
     margin-left: 28px;

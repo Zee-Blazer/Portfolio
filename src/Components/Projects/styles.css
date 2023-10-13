@@ -142,9 +142,9 @@
 
     .image__display
     {
-        min-width: 320px;
-        max-width: 320px;
-        height: 180px;
+        min-width: 368px;
+        max-width: 368px;
+        height: 224px;
         margin: 2px 12px;
         cursor: pointer;
         border-radius: 6px;
