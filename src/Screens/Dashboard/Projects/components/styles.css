@@ -48,11 +48,18 @@
 .select__displayer__media
 {
     width: 76px;
-    margin: 2px 6px;
+    height: 76px;
+    margin: 2px 12px;
     margin-bottom: 21px;
 }
 
 .add__icon__mui
 {
     margin-bottom: -7px;
+}
+
+.flex__display
+{
+    display: flex;
+    flex-wrap: wrap;
 }

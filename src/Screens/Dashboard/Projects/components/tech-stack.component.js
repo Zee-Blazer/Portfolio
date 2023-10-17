@@ -4,20 +4,7 @@ import React, { useState } from 'react';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-export const TechStackComponent = () => {
-
-    const [stackEntry, setStackEntry] = useState();
-    const [data, setData] = useState([]);
-
-    const addStack = () => {
-        setData([...data, stackEntry]);
-        setStackEntry("");
-        console.log(data);
-    }
-
-    const removeStack = (e) => {
-        setData(data.filter( ele => ele != e ))
-    }
+export const TechStackComponent = ({ stackEntry, data, setStackEntry, addStack, removeStack }) => {
 
     return (
         <div>
