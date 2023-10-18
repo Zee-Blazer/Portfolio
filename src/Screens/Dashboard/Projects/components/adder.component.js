@@ -7,6 +7,9 @@ import AddIcon from '@mui/icons-material/Add';
 import { storage } from '../../../../firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
+// API call
+import api from '../../../../axios';
+
 // Component
 import { TechStackComponent } from "./tech-stack.component";
 import { ImageDisplayerComponent } from './image-displayer.component';
@@ -39,43 +42,60 @@ export const AdderComponent = () => {
 
         let picturesURL = [];
         let videoURL = [];
-        let coverPhotoURL = [];
+        let coverPhotoURL;
 
-        // for(let i =0; i<pictures.length; i++){
-        //     const imageRef = ref(storage, `/Project/pictures/${pictures[i].name}`);
+        for(let i =0; i<pictures.length; i++){
+            const imageRef = ref(storage, `/Project/pictures/${pictures[i].name}`);
 
-        //     const result = await uploadBytes(imageRef, pictures[i])
-        //         .then( doc => {
-        //             getDownloadURL(doc.ref)
-        //             .then( url => picturesURL.push(url) );
-        //             setPictures();
-        //         } )
-        //         .catch( err => console.log(err) );
-        // }
+            const result = await uploadBytes(imageRef, pictures[i])
+                .then( doc => {
+                    getDownloadURL(doc.ref)
+                    .then( url => picturesURL.push(url) );
+                    setPictures();
+                } )
+                .catch( err => console.log(err) );
+        }
         
-        // for(let i =0; i<videos.length; i++){
-        //     const videoRef = ref(storage, `/Project/videos/${videos[i].name}`);
+        for(let i =0; i<videos.length; i++){
+            const videoRef = ref(storage, `/Project/videos/${videos[i].name}`);
 
-        //     const result = await uploadBytes(videoRef, videos[i])
-        //         .then( doc => {
-        //             getDownloadURL(doc.ref)
-        //             .then( url => videoURL.push(url) );
-        //             setVideos();
-        //         } )
-        //         .catch( err => console.log(err) );
-        // }
+            const result = await uploadBytes(videoRef, videos[i])
+                .then( doc => {
+                    getDownloadURL(doc.ref)
+                    .then( url => videoURL.push(url) );
+                    setVideos();
+                } )
+                .catch( err => console.log(err) );
+        }
 
         const coverPhotoRef = ref(storage, `/Project/cover-photo/${coverPhoto.name}`);
 
         const coverResult = await uploadBytes(coverPhotoRef, coverPhoto)
-        .then( doc => {
-            getDownloadURL(doc.ref)
-            .then( url => coverPhotoURL.push(url) )
+        .then( async doc => {
+            const setter = await getDownloadURL(doc.ref)
+            .then( url => {
+                coverPhotoURL = url;
+                setCoverPhoto();
+            } )
+
         } )
 
-        // console.log(picturesURL);
-        // console.log(videoURL);
-        console.log(coverPhotoURL);
+        api.post('/project/new-project', {
+            name: projectName,
+            description: projectDescription,
+            coverPhoto: coverPhotoURL,
+            pictures: picturesURL,
+            videos: videoURL,
+            techStack: data
+        })
+            .then( doc => {
+                console.log(doc.data);
+                setProjectDescription();
+                setProjectName();
+                setData([]);
+            } )
+            .catch( err => console.log(err) );
+
         setLoading(false);
     }
 
