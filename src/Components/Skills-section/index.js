@@ -21,7 +21,7 @@ export const SkillsSection = (props) => {
     ]
 
     return (
-        <div className="skills__section">
+        <div className="skills__section" id='Skills'>
             <h3>My Skills</h3>
 
             <div className='skills__display'>

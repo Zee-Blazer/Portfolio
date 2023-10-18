@@ -3,11 +3,16 @@ import React, { useState } from 'react';
 // Styles
 import './styles.css';
 
+// Navigation
+import { useNavigate } from 'react-router-dom';
+
 // Component
 import { SampleProjectComponent } from "../../../../Components/Projects/sample-project.component";
 import { ProjectDialog } from './project-dialog.component';
 
 export const ProjectDisplayComponent = ({ type }) => {
+
+    const navigate = useNavigate();
 
     const [open, setOpen] = useState(false);
 
@@ -19,7 +24,10 @@ export const ProjectDisplayComponent = ({ type }) => {
         <div className='project__displayer__comp'>
             <h2 className="project__displayer__header">
                 Projects 
-                <span className='style__span'>{ type === "Dashboard" && "Add" }</span>
+                <span 
+                    className='style__span'
+                    onClick={ () => navigate("/dashboard/add-project") }
+                >{ type === "Dashboard" && "Add" }</span>
             </h2>
 
             <div className='display__perfectly'>

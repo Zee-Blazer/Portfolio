@@ -9,7 +9,7 @@ import Shape3 from '../../Images/Ellipse-3.png';
 export const AboutComponent = () => {
 
     return (
-        <div className='about__section'>
+        <div className='about__section' id='About'>
             <img src={AboutPic} className='about__pic' />
             
             <div className='about__division__section'>

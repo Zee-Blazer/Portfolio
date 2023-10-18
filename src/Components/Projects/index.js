@@ -3,6 +3,9 @@ import React, { useRef } from 'react';
 // Styling
 import './styles.css';
 
+// Navigation
+import { useNavigate } from 'react-router-dom';
+
 // For the image slider
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -11,6 +14,8 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { SampleProjectComponent } from './sample-project.component';
 
 export const  ProjectSection = () => {
+
+    const navigate = useNavigate();
 
   const sliderRef = useRef(null);
   const scrollAmount = 300;
@@ -39,7 +44,7 @@ export const  ProjectSection = () => {
     ]
 
     return (
-        <div className="project__section">
+        <div className="project__section" id='Projects'>
             <h3>Projects</h3>
 
             <div className='image__slider'>
@@ -66,7 +71,10 @@ export const  ProjectSection = () => {
                 />
             </div>
 
-            <button className='main__btn'>Explore More</button>
+            <button 
+                className='main__btn'
+                onClick={ () => navigate("/projects") }
+            >Explore More</button>
 
         </div>
     )

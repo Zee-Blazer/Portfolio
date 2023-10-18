@@ -10,8 +10,11 @@ export const ItemsComponent = ({ items, type }) => {
                             item.text == "Blog" && type !== "Dashboard" ? 
                             <div className="blog__nav__style" key={ item.link }>
                                 <li>
-                                    {/* <a href={item.link}>{ item.text }</a> */}
-                                    {item.text}
+                                    <a 
+                                        href={item.link} style={{ color: 'white' }}
+                                    >
+                                        { item.text }
+                                    </a>
                                 </li>
                             </div>
                             :

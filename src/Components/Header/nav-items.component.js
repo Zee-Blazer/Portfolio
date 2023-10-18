@@ -14,18 +14,19 @@ export const NavItems = ({ type }) => {
     const [open, setOpen] = useState(false);
 
     const items = [
-        {text: "Home", link: "#home", active: true},
-        {text: "About", link: "#about"},
-        {text: "Skills", link: "#skills"},
-        {text: "Projects", link: "#projects"},
-        {text: "Blog", link: "#blog"},
+        {text: "Home", link: "#Home", active: true},
+        {text: "About", link: "#About"},
+        {text: "Skills", link: "#Skills"},
+        {text: "Projects", link: "#Projects"},
+        {text: "Contact", link: "#Contact"},
+        {text: "Blog", link: "#Blog"},
     ];
 
     const dashItems = [
-        {text: "About", link: "#about"},
-        {text: "Projects", link: "#projects"},
-        {text: "Blog", link: "#blog"},
-        {text: "Messages", link: "#messages"},
+        {text: "About", link: ""},
+        {text: "Projects", link: "/dashboard/projects"},
+        {text: "Blog", link: "/dashboard/blogs"},
+        {text: "Messages", link: "/dashboard/all-messages"},
     ]
 
     const toggleDrawer = (value) => setOpen(value);

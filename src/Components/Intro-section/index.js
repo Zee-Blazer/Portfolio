@@ -9,7 +9,7 @@ import Shape from '../../Images/Ellipse-2.png';
 export const IntroSection = () => {
 
     return (
-        <div className="intro__section">
+        <div className="intro__section" id="Home">
             <img src={ Shape } className="shape-1__img" />
             <div>
                 <h2>
