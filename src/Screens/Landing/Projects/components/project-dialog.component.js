@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 
 // Material UI component
 import Dialog from '@mui/material/Dialog';
@@ -8,6 +9,8 @@ import { DiskCont } from './disk-cont.component';
 
 export const ProjectDialog = ({ open, handleClose }) => {
 
+    const [currentNav, setCurrentNav] = useState("Picture");
+
     return (
         <Dialog
             open={ open }
@@ -16,9 +19,9 @@ export const ProjectDialog = ({ open, handleClose }) => {
             aria-describedby="alert-dialog-description"
         >
             <div className='project__dialog__box'>
-                <SmartNav />
+                <SmartNav currentNav={ currentNav } setCurrentNav={ setCurrentNav } />
 
-                <DiskCont />
+                <DiskCont currentNav={ currentNav } />
             </div>
         </Dialog>
     )

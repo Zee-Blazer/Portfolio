@@ -1,10 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 // Styling
 import './styles.css';
 
 // Navigation
 import { useNavigate } from 'react-router-dom';
+
+// Axios API
+import { getAllProjects } from '../../Services/API/projects.api';
 
 // For the image slider
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -17,31 +20,15 @@ export const  ProjectSection = () => {
 
     const navigate = useNavigate();
 
-  const sliderRef = useRef(null);
-  const scrollAmount = 300;
+    const [projectsData, setProjectData] = useState();
 
-    const images = [
-        {
-            url: "../../Images/pro-duct.png",
-            caption: "Slider 1",
-            tool: [ "React", "Firebase", "MongoDB", "Express" ]
-        },
-        {
-            url: "../../Images/pro-duct.png",
-            caption: "Slider 2",
-            tool: [ "React", "Firebase", "MongoDB", "Express" ]
-        },
-        {
-            url: "../../Images/pro-duct.png",
-            caption: "Slider 3",
-            tool: [ "React", "Firebase", "MongoDB", "Express" ]
-        },
-        {
-            url: "../../Images/pro-duct.png",
-            caption: "Slider 4",
-            tool: [ "React", "Firebase", "MongoDB", "Express" ]
-        }
-    ]
+    const sliderRef = useRef(null);
+    const scrollAmount = 300;
+
+
+    useEffect( () => {
+        getAllProjects(setProjectData);
+    }, [] )
 
     return (
         <div className="project__section" id='Projects'>
@@ -57,9 +44,14 @@ export const  ProjectSection = () => {
                 />
 
                 <div className="images-container" ref={sliderRef}>
-                    {images.map((image, index) => (
-                        <SampleProjectComponent image={ image } index={ index } />
-                    ) )}
+                    {
+                        projectsData && projectsData.map( (item, key) => (
+                            <SampleProjectComponent 
+                                item={ item }
+                                key={ key }
+                            />
+                        )  )
+                    }
                 </div>
 
                 <ChevronRightIcon 

@@ -93,9 +93,11 @@
 .smart__disk__small
 {
     width: 48px;
+    height: 48px;
     margin: 0px 12px;
     margin-bottom: 12px;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .border__line

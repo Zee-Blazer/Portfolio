@@ -1,34 +1,63 @@
+import React, { useContext } from 'react';
 
 // Material UI Icon
 import BackspaceIcon from '@mui/icons-material/Backspace';
 
+// Navigation
+import { useNavigate } from 'react-router-dom';
+
+// Context
+import { MediaDisplayContext } from '../../Services/Context/media-display.context';
+
 // Image
 import Product from '../../Images/pro-duct.png';
 
-export const SampleProjectComponent = ({ image, index, display, handleOpen, type }) => {
+export const SampleProjectComponent = ({ display, handleOpen, type, item, key }) => {
+
+    const navigate = useNavigate();
+
+    const { setData } = useContext(MediaDisplayContext);
+
+    const actionPerform = () => {
+        if(display === "sample"){
+            handleOpen();
+            setData(item);
+        } 
+        else{
+            navigate("/projects")
+        }
+    }
 
     return (
         <div 
             className={ display === "sample" ? "image__display fixed__display" : 'image__display' }
-            key={index && index}
-            style={{ backgroundImage: `url(${Product})`, backgroundRepeat: 'no-repeat' }}
+            key={ key }
+            style={{ 
+                backgroundImage: `url(${item.coverPhoto ? item.coverPhoto : Product})`, 
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: "cover"
+            }}
         >
 
             <div className='display__bg'>
-                <h2>Project Name</h2>
+                <h2>{ item.name }</h2>
 
                 <div className='tools__display'>
-                    { image && image.tool.map( item => (
+                    { item.techStack && item.techStack.map( item => (
                         <p>{ item }</p>
                     ) ) }
                 </div>
 
-                <p className='spec__display__cont'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque. Tempus quam pellentesque nec nam aliquam sem. Hendrerit dolor magna eget est lorem ipsum dolor. Sit amet massa vitae tortor condimentum lacinia. At ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Dui sapien eget mi proin sed libero enim sed faucibus.</p>
+                <p className='spec__display__cont'>
+                    { item.description }
+                </p>
                 
                 <div className='inside__btn'>
                     <button>Visit</button>
                     <button>Code</button>
-                    <button onClick={ () => display === "sample" && handleOpen() }>Video/Picture</button>
+                    <button 
+                        onClick={ actionPerform }
+                    >Video/Picture</button>
                     { type === "Dashboard" && <BackspaceIcon className='backspace__icon' /> }
                 </div>
 

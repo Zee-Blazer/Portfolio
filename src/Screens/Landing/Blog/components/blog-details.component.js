@@ -1,3 +1,7 @@
+import React, { useContext } from 'react';
+
+// Context
+import { MediaDisplayContext } from '../../../../Services/Context/media-display.context';
 
 // Component
 import { MainBlogComponent } from './main-blog.component';
@@ -6,11 +10,13 @@ import { MoreBlogComponent } from './more-blog.component';
 
 export const BlogDetailsComponent = () => {
 
+    const { blogDetails } = useContext( MediaDisplayContext );
+
     return (
         <>
             <div className="blog__detail__cont">
             
-                <MainBlogComponent />
+                <MainBlogComponent blogDetails={ blogDetails } />
 
                 <AboutBloggerComponent />
 

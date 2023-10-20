@@ -44,6 +44,10 @@
 .blog__img__placeholder
 {
     width: 275px;
+    height: 132px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .blog__header
@@ -75,6 +79,9 @@
     text-align: start;
     margin: 4px 12px;
     margin-top: 25px;
+    min-height: 84px;
+    max-height: 84px;
+    overflow: scroll;
 }
 
 .read__blog

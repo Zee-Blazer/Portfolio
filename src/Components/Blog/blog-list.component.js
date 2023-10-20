@@ -2,13 +2,15 @@
 // Component
 import { BlogContainerComponent } from './blog-container.component';
 
-export const BlogListComponent = ({ type }) => {
+export const BlogListComponent = ({ type, storage }) => {
+    console.log(storage)
 
     return (
         <div className='blog__list__cont'>
-            <BlogContainerComponent type={ type } />
-            <BlogContainerComponent type={ type } />
-            <BlogContainerComponent type={ type } state="Draft" />
+            { storage && storage.map( (item, key) => (
+                <BlogContainerComponent type={ type } item={ item } key={ key } />
+            ) ) }
+            {/* <BlogContainerComponent type={ type } state="Draft" /> */}
         </div>
     )
 }

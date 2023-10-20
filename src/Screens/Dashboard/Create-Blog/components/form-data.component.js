@@ -7,6 +7,9 @@ import { stateToHTML } from 'draft-js-export-html';
 import { stateFromHTML } from 'draft-js-import-html';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
+// Navigation
+import { useNavigate } from 'react-router-dom';
+
 // API request
 import { createBlogApi } from '../../../../Services/API/create-blog.api';
 
@@ -18,6 +21,8 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { ImageDisplayerComponent } from '../../Projects/components/image-displayer.component';
 
 export const FormDataComponent = () => {
+
+    const navigate = useNavigate();
 
     const [editorContent, setEditorContent] = useState(EditorState.createEmpty());
     const [blogPic, setBlogPic] = useState();
@@ -66,6 +71,8 @@ export const FormDataComponent = () => {
             setBlogTitle();
             setSummary();
             setEditorContent(EditorState.createEmpty());
+
+            navigate("/dashboard/blogs")
         }
         else if(!blogTitle){
             setErrMsg("Please Fill in your Blog Title");
@@ -103,14 +110,6 @@ export const FormDataComponent = () => {
                 value={ summary }
                 onChange={ e => setSummary(e.target.value) }
             ></textarea>
-
-            {/* {
-                editorContent && <div
-                dangerouslySetInnerHTML={{
-                    __html: stateToHTML(editorContent.getCurrentContent())
-                }}
-            ></div>
-            } */}
 
             <Editor 
                 editorState={ editorContent }

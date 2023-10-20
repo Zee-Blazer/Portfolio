@@ -62,6 +62,7 @@
 .tools__display
 {
     display: flex;
+    flex-wrap: wrap;
     margin: 12px 7%;
 }
 

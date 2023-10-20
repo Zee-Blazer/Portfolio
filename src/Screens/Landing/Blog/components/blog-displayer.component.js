@@ -1,6 +1,10 @@
+import React, { useEffect, useState } from 'react';
 
 // Navigation
 import { useNavigate } from "react-router-dom";
+
+// Backend API
+import { getAllBlogs } from "../../../../Services/API/blogs.api";
 
 // Component
 import { BlogListComponent } from "../../../../Components/Blog/blog-list.component";
@@ -8,6 +12,12 @@ import { BlogListComponent } from "../../../../Components/Blog/blog-list.compone
 export const BlogDisplayer = ({ type }) => {
 
     const navigate = useNavigate();
+
+    const [storage, setStorage] = useState();
+
+    useEffect( () => {
+        getAllBlogs({ setStorage });
+    }, [] )
 
     return (
         <div>
@@ -21,7 +31,7 @@ export const BlogDisplayer = ({ type }) => {
                     >Add</div> 
                 }
             </div>
-            <BlogListComponent type={ type } />
+            <BlogListComponent type={ type } storage={ storage } />
         </div>
     )
 }

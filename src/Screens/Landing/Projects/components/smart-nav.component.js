@@ -3,13 +3,19 @@
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 
-export const SmartNav = () => (
+export const SmartNav = ({ currentNav, setCurrentNav }) => (
     <div className='smart__nav'>
-        <div>
+        <div 
+            onClick={ () => setCurrentNav("Video") }
+            className={ currentNav === "Video" && 'active__smart__nav' }
+        >
             <SmartDisplayIcon />
             <p>Video</p>
         </div>
-        <div className='active__smart__nav'>
+        <div 
+            onClick={ () => setCurrentNav("Picture") } 
+            className={ currentNav === "Picture" && 'active__smart__nav' }
+        >
             <InsertPhotoIcon />
             <p>Picture</p>
         </div>
