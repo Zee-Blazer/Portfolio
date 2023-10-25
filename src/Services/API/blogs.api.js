@@ -18,10 +18,16 @@ const getAllBlogs = ({ limit, setStorage }) => {
     .catch( err => console.log(err) )
 }
 
+const getBlogs = ({ setStorage }) => {
+    api.get(`/blog/blogs`)
+    .then( response => setStorage(response.data.doc) )
+    .catch( err => console.log(err) );
+}
+
 const deleteSpecificBlog = ({ id }) => {
     api.delete(`/blog//delete-blog/${ id }`)
     .then( res => console.log(res) )
     .catch( err => console.log(err) )
 }
 
-export { getAllBlogs, deleteSpecificBlog }
+export { getAllBlogs, deleteSpecificBlog, getBlogs }

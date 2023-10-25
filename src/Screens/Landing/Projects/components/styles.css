@@ -86,8 +86,10 @@
 
 .smart__disk__big
 {
-    width: 430px;
-    height: 294px;
+    min-width: 430px;
+    min-height: 294px;
+    max-width: 430px;
+    max-height: 294px;
 }
 
 .smart__disk__small
@@ -129,7 +131,10 @@
 
     .smart__disk__big
     {
-        width: 296px;
-        height: 228px;
+        min-width: 296px;
+        min-height: 228px;
+        max-width: 296px;
+        max-width: 228px;
+        margin-left: -12px;
     }
 }

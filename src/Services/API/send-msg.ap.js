@@ -6,4 +6,13 @@ const sendMsg = ({ name, email, message }) => {
         .catch( err => console.log(err) );
 }
 
-export { sendMsg };
+const getAllMessages = (setData) => {
+    api.get("/message/all-msg")
+        .then( response => {
+            setData(response.data.doc);
+            console.log(response.data)
+        } )
+        .catch( err => console.log(err) );
+}
+
+export { sendMsg, getAllMessages };

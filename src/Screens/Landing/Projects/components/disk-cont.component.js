@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 // Image
 import Product from '../../../../Images/pro-duct.png';
 
 // Context
 import { MediaDisplayContext } from '../../../../Services/Context/media-display.context';
+import { ShowVideo } from './another-video.component';
 
 export const DiskCont = ({ currentNav }) => {
 
@@ -15,6 +16,8 @@ export const DiskCont = ({ currentNav }) => {
         setVideoPlay, 
         setPicShow 
     } = useContext(MediaDisplayContext);
+
+    const [show, setShow] = useState(!videoPlay ? data.videos[0] : videoPlay);
 
     return (
         <div className='disk__cont'>
@@ -46,12 +49,7 @@ export const DiskCont = ({ currentNav }) => {
                     </>
                 :
                     <>
-                        <video className='smart__disk__big' controls>
-                            <source 
-                                src={ videoPlay ? videoPlay : data.videos[0] } 
-                                type='video/mp4' 
-                            />
-                        </video>
+                        <ShowVideo show={ show } />
 
                         <div>
                             { data && data.videos.map( (item, key) => {
@@ -61,7 +59,10 @@ export const DiskCont = ({ currentNav }) => {
                                         width="48px" 
                                         height="48px" 
                                         key={ key }
-                                        onClick={ () => setVideoPlay(item) }
+                                        onClick={ () => {
+                                            setShow(item);
+                                            setVideoPlay(item);
+                                        } }
                                     >
                                         <source src={ item } type="video/mp4" />
                                     </video>

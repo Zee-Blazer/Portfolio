@@ -1,14 +1,14 @@
 
-export const MessagesComponent = () => {
+export const MessagesComponent = ({ item, key }) => {
 
     return (
-        <div className="message__display__cont">
+        <div className="message__display__cont" key={ key }>
             <div>
-                <h4>The Person's name</h4>
-                <p>the.persons.email.com</p>
+                <h4>{ item.name }</h4>
+                <p>{ item.email }</p>
             </div>
             
-            <p>Description: Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+            <p>{ item.message }</p>
         </div>
     )
 }

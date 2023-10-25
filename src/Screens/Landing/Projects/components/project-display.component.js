@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 // Styles
 import './styles.css';
+
+// Context 
+import { MediaDisplayContext } from '../../../../Services/Context/media-display.context';
 
 // Navigation
 import { useNavigate } from 'react-router-dom';
@@ -17,13 +20,19 @@ export const ProjectDisplayComponent = ({ type }) => {
 
     const navigate = useNavigate();
 
+    const { setVideoPlay, setPicShow } = useContext(MediaDisplayContext);
+
     const [projectData, setProjectData] = useState();
 
     const [open, setOpen] = useState(false);
 
     const handleOpen = () =>  setOpen(true);
 
-    const handleClose = () => setOpen(false);
+    const handleClose = () => {
+        setOpen(false);
+        setPicShow();
+        setVideoPlay();
+    }
 
     useEffect( () => {
         getAllProjects(setProjectData);

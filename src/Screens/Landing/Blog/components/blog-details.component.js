@@ -22,7 +22,7 @@ export const BlogDetailsComponent = () => {
 
             </div>
 
-            <MoreBlogComponent />
+            <MoreBlogComponent unique={ blogDetails._id } />
         </>
     )
 }

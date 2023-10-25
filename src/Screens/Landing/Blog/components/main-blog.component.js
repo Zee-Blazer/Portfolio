@@ -11,7 +11,6 @@ export const MainBlogComponent = ({ blogDetails }) => {
             <h2 className="blog__post__title">{ blogDetails.title }</h2>
             <p className="blog__post__date">{ blogDetails.date }</p>
 
-            {/* <img src={ blogDetails.image } className='intro__blog__img' /> */}
             <div
                 className='intro__blog__img'
                 style={{
@@ -20,21 +19,11 @@ export const MainBlogComponent = ({ blogDetails }) => {
                 }}
             ></div>
 
-            {/* {
-                editorContent && <div
-                    dangerouslySetInnerHTML={{
-                        __html: stateToHTML(editorContent.getCurrentContent())
-                    }}
-                ></div>
-            } */}
-
-            <p className='blog__writings'>
-                Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <div
+                dangerouslySetInnerHTML={{
+                    __html: blogDetails.body
+                }}
+            ></div>
         </div>
     )
 }

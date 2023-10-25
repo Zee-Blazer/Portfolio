@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 // Backend API
-import { getAllBlogs } from "../../../../Services/API/blogs.api";
+import { getBlogs } from "../../../../Services/API/blogs.api";
 
 // Component
 import { BlogListComponent } from "../../../../Components/Blog/blog-list.component";
@@ -16,7 +16,7 @@ export const BlogDisplayer = ({ type }) => {
     const [storage, setStorage] = useState();
 
     useEffect( () => {
-        getAllBlogs({ setStorage });
+        getBlogs({ setStorage });
     }, [] )
 
     return (
