@@ -9,9 +9,9 @@ import { MessagesComponent } from "./components/messages.component";
 
 export const MessagesScreen = () => {
 
-    document.title = `All Messages (24)`;
-
     const [messages, setMessages] = useState();
+
+    document.title = `All Messages (${ messages && messages.length })`;
 
     useEffect( () => {
         getAllMessages(setMessages);

@@ -1,7 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
-// Material UI Icon
-import DeleteIcon from '@mui/icons-material/Delete';
+// In view animation
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+// Animation
+import 'animate.css';
 
 // Navigation
 import { useNavigate } from 'react-router-dom';
@@ -15,9 +19,18 @@ import { deleteSpecificBlog } from '../../Services/API/blogs.api';
 // Image
 import Blog0 from '../../Images/blog-0.png';
 
+const varent = {
+    visible: { animation: "pulse", animationDuration: "3s", },
+    hidden: {  }
+  };
+
 export const BlogContainerComponent = ({ type, item }) => {
 
     const navigate = useNavigate();
+
+    // Animation import use
+    const controls = useAnimation();
+    const [ref, inView] = useInView();
 
     const { setBlogDetails } = useContext( MediaDisplayContext );
 
@@ -26,8 +39,19 @@ export const BlogContainerComponent = ({ type, item }) => {
         setBlogDetails(item);
     }
 
+    useEffect(() => {
+        if (inView) {
+          controls.start("visible");
+        }
+      }, [controls, inView]);
+
+
     return (
-        <div className='blog__item__cont'>
+        <motion.div className='blog__item__cont'
+            ref={ref}
+            variants={varent}
+            animate={controls}
+        >
             {/* <img src={ item.image } className='blog__img__placeholder' /> */}
             <div 
                 className='blog__img__placeholder'
@@ -59,6 +83,6 @@ export const BlogContainerComponent = ({ type, item }) => {
                     { !item.status ? 'Draft' : "Read" }
                 </button>
             </div>
-        </div>
+        </motion.div>
     )
 }

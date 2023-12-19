@@ -3,6 +3,13 @@ import React, { useRef, useEffect, useState } from 'react';
 // Styling
 import './styles.css';
 
+// In view animation
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+// Animation
+import 'animate.css';
+
 // Navigation
 import { useNavigate } from 'react-router-dom';
 
@@ -16,9 +23,18 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 // Component
 import { SampleProjectComponent } from './sample-project.component';
 
+const varent = {
+    visible: { animation: "tada", animationDuration: "3s", },
+    hidden: {  }
+  };
+
 export const  ProjectSection = () => {
 
     const navigate = useNavigate();
+
+    // Animation import use
+    const controls = useAnimation();
+    const [ref, inView] = useInView();
 
     const [projectsData, setProjectData] = useState();
 
@@ -29,6 +45,13 @@ export const  ProjectSection = () => {
     useEffect( () => {
         getAllProjects(setProjectData);
     }, [] )
+
+    useEffect(() => {
+        if (inView) {
+          controls.start("visible");
+        }
+      }, [controls, inView]);
+
 
     return (
         <div className="project__section" id='Projects'>
@@ -46,10 +69,16 @@ export const  ProjectSection = () => {
                 <div className="images-container" ref={sliderRef}>
                     {
                         projectsData && projectsData.map( (item, key) => (
-                            <SampleProjectComponent 
-                                item={ item }
-                                key={ key }
-                            />
+                            <motion.div
+                                ref={ref}
+                                variants={varent}
+                                animate={controls}
+                            >
+                                <SampleProjectComponent 
+                                    item={ item }
+                                    key={ key }
+                                />
+                            </motion.div>
                         )  )
                     }
                 </div>

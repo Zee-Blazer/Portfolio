@@ -1,15 +1,42 @@
+import React, { useEffect } from 'react';
 
 // Styling
 import './styles.css';
+
+// In view animation
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+// Animation
+import 'animate.css';
 
 // Images
 import AboutPic from '../../Images/About-Pic.png';
 import Shape3 from '../../Images/Ellipse-3.png';
 
+const varent = {
+    visible: { animation: "swing", animationDuration: "2s", },
+    hidden: {  }
+  };
+
 export const AboutComponent = () => {
 
+    const controls = useAnimation();
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+        if (inView) {
+          controls.start("visible");
+        }
+      }, [controls, inView]);
+
     return (
-        <div className='about__section' id='About'>
+        <motion.div 
+            className='about__section animate__animated animate__fadeIn' id='About'
+            ref={ref}
+            variants={varent}
+            animate={controls}
+        >
             <img src={AboutPic} className='about__pic' />
             
             <div className='about__division__section'>
@@ -28,6 +55,6 @@ export const AboutComponent = () => {
 
                 <img src={ Shape3 } className='green__shape' />
             </div>
-        </div>
+        </motion.div>
     )
 }
