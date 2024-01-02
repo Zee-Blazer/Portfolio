@@ -20,6 +20,18 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 // Component
 import { ImageDisplayerComponent } from '../../Projects/components/image-displayer.component';
 
+const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+function generateString(length) {
+    let result = ' ';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return result;
+}
+
 export const FormDataComponent = () => {
 
     const navigate = useNavigate();
@@ -66,7 +78,8 @@ export const FormDataComponent = () => {
                 summary,
                 body: stateToHTML(editorContent.getCurrentContent()),
                 title: blogTitle,
-                status
+                status,
+                route: generateString(16)
             })
             setBlogTitle();
             setSummary();

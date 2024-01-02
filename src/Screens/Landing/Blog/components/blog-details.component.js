@@ -1,7 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+
+import { useParams } from 'react-router-dom';
 
 // Context
 import { MediaDisplayContext } from '../../../../Services/Context/media-display.context';
+
+// API request
+import { getParticularBlog } from '../../../../Services/API/blogs.api';
 
 // Component
 import { MainBlogComponent } from './main-blog.component';
@@ -10,19 +15,27 @@ import { MoreBlogComponent } from './more-blog.component';
 
 export const BlogDetailsComponent = () => {
 
-    const { blogDetails } = useContext( MediaDisplayContext );
+    const [blog, setBlog] = useState();
+    const { route } = useParams();
+
+    // const { blogDetails } = useContext( MediaDisplayContext );
+
+    useEffect( () => {
+
+        getParticularBlog(route, setBlog);
+    }, [] )
 
     return (
         <>
             <div className="blog__detail__cont">
             
-                <MainBlogComponent blogDetails={ blogDetails } />
+                { blog && <MainBlogComponent blogDetails={ blog } /> }
 
                 <AboutBloggerComponent />
 
             </div>
 
-            <MoreBlogComponent unique={ blogDetails._id } />
+            <MoreBlogComponent unique={ blog } />
         </>
     )
 }

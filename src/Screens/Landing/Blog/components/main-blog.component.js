@@ -1,10 +1,25 @@
+import React, { useState, useEffect } from 'react';
+
+// API importation
+import { getBlogByTitle } from '../../../../Services/API/blogs.api';
+
+import { useParams } from 'react-router-dom';
 
 // Image
 import BlogImage from '../../../../Images/blog-1.png';
 
 export const MainBlogComponent = ({ blogDetails }) => {
 
-    console.log(blogDetails)
+    // const routerParams = useParams();
+
+    // const [blog, setBlog] = useState();
+
+    // useEffect( () => {
+    //     getBlogByTitle(routerParams.id, setBlog);
+    // }, [] )
+
+    // // console.log(blog);
+    // console.log(routerParams)
 
     return (
         <div className='main__blog__detail'>
@@ -23,6 +38,7 @@ export const MainBlogComponent = ({ blogDetails }) => {
                 dangerouslySetInnerHTML={{
                     __html: blogDetails.body
                 }}
+                className='styling__content'
             ></div>
         </div>
     )

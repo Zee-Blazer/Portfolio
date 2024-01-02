@@ -14,12 +14,12 @@ export const NavItems = ({ type }) => {
     const [open, setOpen] = useState(false);
 
     const items = [
-        {text: "Home", link: "#Home", active: true},
-        {text: "About", link: "#About"},
-        {text: "Skills", link: "#Skills"},
-        {text: "Projects", link: "#Projects"},
-        {text: "Contact", link: "#Contact"},
-        {text: "Blog", link: "#Blog"},
+        {text: "Home", link: "/#Home", active: true},
+        {text: "About", link: "/#About"},
+        {text: "Skills", link: "/#Skills"},
+        {text: "Projects", link: "/#Projects"},
+        {text: "Contact", link: "/#Contact"},
+        {text: "Blog", link: "/#Blog"},
     ];
 
     const dashItems = [

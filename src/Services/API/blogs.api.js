@@ -30,4 +30,25 @@ const deleteSpecificBlog = ({ id }) => {
     .catch( err => console.log(err) )
 }
 
-export { getAllBlogs, deleteSpecificBlog, getBlogs }
+const getBlogByTitle = (title, setBlog) => {
+    api.get(`/all-blog/${title}`)
+        .then( res => setBlog(res.data) )
+        .catch( err => console.log(err) );
+}
+
+const getParticularBlog = (route, setBlog) => {
+    api.get(`/blog/specific-blog/${route}`)
+        .then( res => {
+            setBlog(res.data);
+            // console.log(res.data);
+        } )
+        .catch( err => console.log(err) );
+}
+
+// const getBlogByRoute = (route, setBlog) => {
+//     api.get(`/all-blog/${route}`)
+//         .then( res => setBlog(res.data) )
+//         .catch( err => console.log(err) );
+// }
+
+export { getAllBlogs, deleteSpecificBlog, getBlogs, getBlogByTitle, getParticularBlog }

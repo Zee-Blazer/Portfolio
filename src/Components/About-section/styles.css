@@ -56,7 +56,8 @@
     outline: none;
     border-radius: 12px;
     margin: 4px 35%;
-    margin-top: 21px;
+    margin-top: 42px;
+    text-decoration: none;
     border: none;
     cursor: pointer;
     color: white;
@@ -66,6 +67,11 @@
 .div__align
 {
     line-height: 23px;
+}
+
+.div__align p 
+{
+    margin-bottom: 38px;
 }
 
 .green__shape

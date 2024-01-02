@@ -68,7 +68,7 @@
     background-color: #1E1E1E;
     border-radius: 7px;
     padding: 7px 12px;
-    max-height: 200px;
+    max-height: 300px;
     margin-left: 28px;
     margin-top: 121px;
 }
@@ -118,6 +118,7 @@
     justify-content: space-between;
 }
 
+
 .adder__blog
 {
     margin-right: 24px;
@@ -133,8 +134,28 @@
 .about__person__descript
 {
     font-size: 12px;
-    margin: 8px 12px;
+    margin: 12px;
     line-height: 18px;
+}
+
+.styling__content
+{
+    font-family: "lora";
+    font-size: 14px;
+    line-height: 3ch;
+    /* text-indent: 5px; */
+    /* letter-spacing: 1px; */
+}
+
+.styling__content h1, .styling__content h3, .styling__content h2, .styling__content h4, .styling__content h5, .styling__content h6
+{
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+.about__person__cont
+{
+    height: auto;
 }
 
 @media only screen and (max-width: 600px)
@@ -165,7 +186,7 @@
 
     .about__person
     {
-        max-height: 200px;
+        max-height: 456px;
         margin-left: 0px;
         margin-top: 58px;
     }

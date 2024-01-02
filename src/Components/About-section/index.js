@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 // Styling
 import './styles.css';
 
+import { Link } from 'react-router-dom';
+
 // In view animation
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -46,10 +48,10 @@ export const AboutComponent = () => {
 
                     <div className='div__align'>
                         <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque. Tempus quam pellentesque nec nam aliquam sem. Hendrerit dolor magna eget est lorem ipsum dolor. Sit amet massa vitae tortor condimentum lacinia. At ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Dui sapien eget mi proin sed libero enim sed faucibus. Lectus urna duis convallis convallis tellus. Sit amet venenatis urna cursus eget nunc. Et molestie ac feugiat sed lectus vestibulum mattis. Lacus luctus accumsan tortor posuere ac ut consequat semper. Urna molestie at elementum eu. Pulvinar elementum integer enim neque volutpat. Nisl nunc mi ipsum faucibus vitae aliquet. Cursus turpis massa tincidunt dui ut. Egestas erat imperdiet sed euismod nisi porta. Hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit. In egestas erat imperdiet sed euismod nisi porta.
+                        Hello there! 👋 I'm Bolaji, a passionate software engineer based in Nigeria, navigating the vast realms of the MERN stack. A relentless learner, I'm on a quest to continuously grow my skills and shape my career. Beyond coding, I harbor ambitions of building my own empire. Join me on this exciting journey as we turn lines of code into impactful innovations. Let's create, innovate, and build something extraordinary together. Welcome to my world of endless possibilities! 🚀
                         </p>
 
-                        <button className='cv__download'>Download CV</button>
+                        <Link to="https://drive.google.com/file/d/193MZJ7fGo6rMJRRaSfW0_mQ8Chd-JpZg/view?usp=drive_link" className='cv__download'>Download CV</Link>
                     </div>
                 </div>
 

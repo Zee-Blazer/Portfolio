@@ -35,8 +35,9 @@ export const BlogContainerComponent = ({ type, item }) => {
     const { setBlogDetails } = useContext( MediaDisplayContext );
 
     const openBlog = () => {
-        navigate(`/blog/${ item.title.split(" ").join("-") }`);
+        navigate(`/blog/${item.route}/${ item.title.split(" ").join("-") }`);
         setBlogDetails(item);
+        // console.log(item)
     }
 
     useEffect(() => {

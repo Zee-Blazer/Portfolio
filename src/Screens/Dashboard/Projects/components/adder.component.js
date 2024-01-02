@@ -20,6 +20,8 @@ export const AdderComponent = () => {
     const [pictures, setPictures] = useState();
     const [videos, setVideos] = useState();
     const [projectName, setProjectName] = useState();
+    const [githubLink, setGithubLink] = useState();
+    const [site, setSite] = useState();
     const [projectDescription, setProjectDescription] = useState();
 
     const [loading, setLoading] = useState(false);
@@ -86,7 +88,9 @@ export const AdderComponent = () => {
             coverPhoto: coverPhotoURL,
             pictures: picturesURL,
             videos: videoURL,
-            techStack: data
+            techStack: data,
+            site: site,
+            git: githubLink
         })
             .then( doc => {
                 console.log(doc.data);
@@ -151,6 +155,26 @@ export const AdderComponent = () => {
                         value={ projectDescription }
                         onChange={ e => setProjectDescription(e.target.value) }
                     ></textarea>
+                </div>
+
+                <div>
+                    <label>Project Code Link: </label>
+                    <input 
+                        type="text" 
+                        placeholder="github link..." 
+                        value={ githubLink }
+                        onChange={ e => setGithubLink(e.target.value) }
+                    />
+                </div>
+
+                <div>
+                    <label>Project Site Visit: </label>
+                    <input 
+                        type="text" 
+                        placeholder="site link..." 
+                        value={ site }
+                        onChange={ e => setSite(e.target.value) }
+                    />
                 </div>
 
                 <TechStackComponent 

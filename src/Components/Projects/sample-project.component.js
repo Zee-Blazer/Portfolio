@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import BackspaceIcon from '@mui/icons-material/Backspace';
 
 // Navigation
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 // Context
 import { MediaDisplayContext } from '../../Services/Context/media-display.context';
@@ -53,8 +53,8 @@ export const SampleProjectComponent = ({ display, handleOpen, type, item, key })
                 </p>
                 
                 <div className='inside__btn'>
-                    <button>Visit</button>
-                    <button>Code</button>
+                    <Link to={ item.site }><button>Visit</button></Link>
+                    <Link to={ item.git }><button>Code</button></Link>
                     <button 
                         onClick={ actionPerform }
                     >Video/Picture</button>

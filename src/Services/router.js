@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
         element: <DisplayBlogScreen />
     },
     {
-        path: "/blog/:id",
+        path: "/blog/:route/:id",
         element: <SpecificPostScreen />
     },
     {

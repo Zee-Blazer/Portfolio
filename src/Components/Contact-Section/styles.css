@@ -53,6 +53,11 @@
     color: #A2A2A2;
 }
 
+.icons__media__link
+{
+    color: #A2A2A2;
+}
+
 @media only screen and (max-width: 600px)
 {
     .message__type__cont input, .message__type__cont textarea

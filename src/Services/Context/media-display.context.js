@@ -10,6 +10,8 @@ export const MediaDisplayProvider = ({ children }) => {
 
     const [blogDetails, setBlogDetails] = useState();
 
+    // console.log(blogDetails);
+
     return (
         <MediaDisplayContext.Provider
             value={{
