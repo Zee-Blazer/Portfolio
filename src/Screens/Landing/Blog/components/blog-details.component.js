@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { useParams } from 'react-router-dom';
 
 // Context
-import { MediaDisplayContext } from '../../../../Services/Context/media-display.context';
+// import { MediaDisplayContext } from '../../../../Services/Context/media-display.context';
 
 // API request
 import { getParticularBlog } from '../../../../Services/API/blogs.api';

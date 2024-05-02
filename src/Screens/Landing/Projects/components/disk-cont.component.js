@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 // Image
-import Product from '../../../../Images/pro-duct.png';
+// import Product from '../../../../Images/pro-duct.png'; // Not using this code now
 
 // Context
 import { MediaDisplayContext } from '../../../../Services/Context/media-display.context';

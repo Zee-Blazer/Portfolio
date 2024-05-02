@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 
 // API importation
-import { getBlogByTitle } from '../../../../Services/API/blogs.api';
+// import { getBlogByTitle } from '../../../../Services/API/blogs.api'; // Not using now
 
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom'; // Not using now
 
 // Image
-import BlogImage from '../../../../Images/blog-1.png';
+// import BlogImage from '../../../../Images/blog-1.png'; // Not using now
 
 export const MainBlogComponent = ({ blogDetails }) => {
 

@@ -32,7 +32,8 @@
     "react-scripts": "5.0.1",
     "react-slideshow-image": "^4.2.1",
     "styled-components": "^6.0.8",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.91.0"
   },
   "scripts": {
     "start": "react-scripts start",
