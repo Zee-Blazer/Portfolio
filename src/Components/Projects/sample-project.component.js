@@ -28,6 +28,9 @@ export const SampleProjectComponent = ({ display, handleOpen, type, item, key })
         }
     }
 
+    // This code limits the sentence lines to just 50 words
+    const limitWords = (data) => data.split(' ').length > 50 ? data.split(' ').slice(0, 50).join(' ') + '...' : data
+
     return (
         <div 
             className={ display === "sample" ? "image__display fixed__display" : 'image__display' }
@@ -49,7 +52,7 @@ export const SampleProjectComponent = ({ display, handleOpen, type, item, key })
                 </div>
 
                 <p className='spec__display__cont'>
-                    { item.description }
+                    { limitWords(item.description) }    
                 </p>
                 
                 <div className='inside__btn'>
