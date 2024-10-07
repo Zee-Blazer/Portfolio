@@ -19,6 +19,7 @@ export const SampleProjectComponent = ({ display, handleOpen, type, item, key })
     const { setData } = useContext(MediaDisplayContext);
 
     const actionPerform = () => {
+        console.log(item);
         if(display === "sample"){
             handleOpen();
             setData(item);

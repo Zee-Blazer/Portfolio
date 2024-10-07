@@ -15,25 +15,25 @@ const getAllBlogs = ({ limit, setStorage }) => {
             setStorage(response.data.doc);
         }
     } )
-    .catch( err => console.log(err) )
+    .catch( err => {} )
 }
 
 const getBlogs = ({ setStorage }) => {
     api.get(`/blog/blogs`)
     .then( response => setStorage(response.data.doc) )
-    .catch( err => console.log(err) );
+    .catch( err => {} );
 }
 
 const deleteSpecificBlog = ({ id }) => {
     api.delete(`/blog//delete-blog/${ id }`)
-    .then( res => console.log(res) )
-    .catch( err => console.log(err) )
+    .then( res => {} )
+    .catch( err => {} )
 }
 
 const getBlogByTitle = (title, setBlog) => {
     api.get(`/all-blog/${title}`)
         .then( res => setBlog(res.data) )
-        .catch( err => console.log(err) );
+        .catch( err => {} );
 }
 
 const getParticularBlog = (route, setBlog) => {
@@ -42,7 +42,7 @@ const getParticularBlog = (route, setBlog) => {
             setBlog(res.data);
             // console.log(res.data);
         } )
-        .catch( err => console.log(err) );
+        .catch( err => {} );
 }
 
 // const getBlogByRoute = (route, setBlog) => {

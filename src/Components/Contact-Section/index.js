@@ -18,7 +18,7 @@ export const ContactSection = () => {
 
     const importantMsg = () => {
         name && email && message ? 
-            sendMsg({ name, email, message }) : 
+            sendMsg({ name, email, message, setName, setEmail, setMessage, setErr }) : 
             setErr("Please completely fill details");
     }
 
